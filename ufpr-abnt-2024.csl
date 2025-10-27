@@ -89,7 +89,9 @@
     <layout prefix="(" suffix=")" delimiter="; ">
       <group delimiter=", ">
         <text macro="author"/>
-        <text variable="issued"/>
+        <date variable="issued"/>
+          <date-part name="year"/>
+        </date>
       </group>
     </layout>
   </citation>
