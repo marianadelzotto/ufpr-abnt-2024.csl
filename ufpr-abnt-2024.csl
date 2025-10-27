@@ -1,8 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0"
-  class="in-text"
-  default-locale="pt-BR"
-  demote-non-dropping-particle="sort-only">
+<?xml version="1.0" encoding="UTF-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="in-text" default-locale="pt-BR">
   <info>
     <title>UFPR – ABNT (2024)</title>
     <title-short>UFPR ABNT</title-short>
@@ -15,10 +12,9 @@
     <category citation-format="author-date"/>
     <category field="generic-base"/>
     <updated>2025-10-27T00:00:00+00:00</updated>
-    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</rights>
+    <rights>CC BY-SA 3.0</rights>
   </info>
 
-  <!-- Formatação geral -->
   <locale xml:lang="pt-BR">
     <terms>
       <term name="accessed">Acesso em</term>
@@ -31,16 +27,16 @@
     </terms>
   </locale>
 
+  <!-- Macros -->
   <macro name="author">
-    <names variable="author">
-      <name form="long" name-as-sort-order="all" delimiter=", " and="symbol"/>
-      <label form="short" prefix=", "/>
+    <names variable="author" delimiter=", " and="symbol">
+      <name form="long" name-as-sort-order="all"/>
     </names>
   </macro>
 
   <macro name="editor">
-    <names variable="editor" prefix=" In: ">
-      <name form="long" name-as-sort-order="all" delimiter=", " and="symbol"/>
+    <names variable="editor" prefix=" In: " delimiter=", " and="symbol">
+      <name form="long" name-as-sort-order="all"/>
     </names>
   </macro>
 
@@ -69,7 +65,7 @@
     <group delimiter=". ">
       <text term="available at" text-case="capitalize-first" suffix=": "/>
       <text variable="URL"/>
-      <group>
+      <group delimiter=" ">
         <text term="accessed" text-case="capitalize-first" suffix=": "/>
         <date variable="accessed">
           <date-part name="day" suffix=" "/>
@@ -80,29 +76,22 @@
     </group>
   </macro>
 
-  <!-- Citações no texto -->
+  <!-- Citation style -->
   <citation collapse="year" et-al-min="4" et-al-use-first="3" disambiguate-add-year-suffix="true">
-    <sort>
-      <key variable="author"/>
-      <key variable="issued"/>
-    </sort>
     <layout prefix="(" suffix=")" delimiter="; ">
       <group delimiter=", ">
         <text macro="author"/>
-        <date variable="issued"/>
-          <date-part name="year"/>
-        </date>
+        <text macro="issued"/>
       </group>
     </layout>
   </citation>
 
-  <!-- Lista de referências -->
+  <!-- Bibliography style -->
   <bibliography hanging-indent="false" et-al-min="4" et-al-use-first="3" line-spacing="1" entry-spacing="1" delimiter-precedes-last="always">
     <sort>
       <key macro="author"/>
       <key macro="issued"/>
     </sort>
-
     <layout>
       <group delimiter=". ">
         <text macro="author" suffix=". "/>
@@ -131,4 +120,5 @@
       </group>
     </layout>
   </bibliography>
+
 </style>
