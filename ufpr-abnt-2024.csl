@@ -29,13 +29,13 @@
 
   <!-- Macros -->
   <macro name="author">
-    <names variable="author" delimiter=", " and="symbol">
+    <names variable="author" delimiter=", ">
       <name form="long" name-as-sort-order="all"/>
     </names>
   </macro>
 
   <macro name="editor">
-    <names variable="editor" prefix=" In: " delimiter=", " and="symbol">
+    <names variable="editor" prefix=" In: " delimiter=", ">
       <name form="long" name-as-sort-order="all"/>
     </names>
   </macro>
