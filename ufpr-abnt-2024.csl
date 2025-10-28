@@ -11,7 +11,7 @@
     </author>
     <category citation-format="author-date"/>
     <category field="generic-base"/>
-    <updated>2025-10-27T00:00:00+00:00</updated>
+    <updated>2025-10-28T00:00:00+00:00</updated>
     <rights>CC BY-SA 3.0</rights>
   </info>
   <locale xml:lang="pt-BR">
@@ -28,17 +28,17 @@
   <!-- MACROS -->
   <macro name="author">
     <names variable="author" delimiter="; ">
-      <name form="long" name-as-sort-order="all" sort-separator=", " initialize-with=". ">
-        <name-part name="family"/>
-        <name-part name="given"/>
+      <name name-as-sort-order="all" sort-separator=", " initialize-with=". ">
+        <name-part name="family" text-case="uppercase"/>
+        <name-part name="given" text-case="capitalize-first"/>
       </name>
     </names>
   </macro>
   <macro name="editor">
-    <names variable="editor" prefix="In: " delimiter=", ">
-      <name form="long" name-as-sort-order="all" sort-separator=", " initialize-with=". ">
-        <name-part name="family"/>
-        <name-part name="given"/>
+    <names variable="editor" prefix="In: " delimiter="; ">
+      <name name-as-sort-order="all" sort-separator=", " initialize-with=". ">
+        <name-part name="family" text-case="uppercase"/>
+        <name-part name="given" text-case="capitalize-first"/>
       </name>
     </names>
   </macro>
@@ -73,7 +73,7 @@
       </group>
     </group>
   </macro>
-  <!-- CITATION (no texto) -->
+  <!-- CITAÇÃO (no texto) -->
   <citation collapse="year" et-al-min="4" et-al-use-first="1" disambiguate-add-year-suffix="true">
     <layout prefix="(" suffix=")" delimiter="; ">
       <group delimiter=", ">
@@ -83,7 +83,7 @@
       <text variable="locator" prefix=", p. "/>
     </layout>
   </citation>
-  <!-- BIBLIOGRAPHY (referências) -->
+  <!-- REFERÊNCIAS -->
   <bibliography hanging-indent="false" et-al-min="4" et-al-use-first="3" line-spacing="1" entry-spacing="1" delimiter-precedes-last="always">
     <sort>
       <key macro="author"/>
