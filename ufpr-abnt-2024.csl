@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
-<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="in-text" default-locale="pt-BR">
+<?xml version="1.0" encoding="UTF-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="in‐text" default‐locale="pt‐BR">
   <info>
-    <title>UFPR &#8211; ABNT (2024)</title>
+    <title>UFPR ABNT (2024)</title>
     <title-short>UFPR ABNT</title-short>
     <id>http://www.zotero.org/styles/ufpr-abnt-2024</id>
     <link href="http://www.zotero.org/styles/ufpr-abnt-2024" rel="self"/>
@@ -25,34 +25,47 @@
       <term name="and">; </term>
     </terms>
   </locale>
-  <!-- Macros -->
+
+  <!-- MACROS -->
   <macro name="author">
-    <names variable="author" delimiter=", ">
-      <name form="long" name-as-sort-order="all"/>
+    <names variable="author" delimiter="; ">
+      <name form="long" name-as-sort-order="all" sort-separator=", ">
+        <name-part name="family" text-case="upper-case"/>
+        <name-part name="given" initialize-with=". " given-name-delimiter=". " text-case="capitalize-first"/>
+      </name>
     </names>
   </macro>
+
   <macro name="editor">
-    <names variable="editor" prefix=" In: " delimiter=", ">
-      <name form="long" name-as-sort-order="all"/>
+    <names variable="editor" prefix="In: " delimiter=", ">
+      <name form="long" name-as-sort-order="all" sort-separator=", ">
+        <name-part name="family" text-case="upper-case"/>
+        <name-part name="given" initialize-with=". " given-name-delimiter=". " text-case="capitalize-first"/>
+      </name>
     </names>
   </macro>
+
   <macro name="issued">
     <date variable="issued">
       <date-part name="year"/>
     </date>
   </macro>
+
   <macro name="title">
-    <text variable="title" font-weight="bold"/>
+    <text variable="title" font-weight="bold" text-case="capitalize-first"/>
   </macro>
+
   <macro name="container-title">
-    <text variable="container-title"/>
+    <text variable="container-title" font-weight="bold" text-case="capitalize-first"/>
   </macro>
+
   <macro name="publisher">
     <group delimiter=": ">
       <text variable="publisher-place"/>
       <text variable="publisher"/>
     </group>
   </macro>
+
   <macro name="access">
     <group delimiter=". ">
       <text term="available at" text-case="capitalize-first" suffix=": "/>
@@ -67,16 +80,19 @@
       </group>
     </group>
   </macro>
-  <!-- Citation style -->
-  <citation collapse="year" et-al-min="4" et-al-use-first="3" disambiguate-add-year-suffix="true">
+
+  <!-- CITATION (no texto) -->
+  <citation collapse="year" et-al-min="4" et-al-use-first="1" disambiguate-add-year-suffix="true">
     <layout prefix="(" suffix=")" delimiter="; ">
       <group delimiter=", ">
         <text macro="author"/>
         <text macro="issued"/>
       </group>
+      <text variable="locator" prefix=", p. "/>
     </layout>
   </citation>
-  <!-- Bibliography style -->
+
+  <!-- BIBLIOGRAPHY (referências) -->
   <bibliography hanging-indent="false" et-al-min="4" et-al-use-first="3" line-spacing="1" entry-spacing="1" delimiter-precedes-last="always">
     <sort>
       <key macro="author"/>
@@ -89,9 +105,9 @@
         <choose>
           <if type="chapter paper-conference" match="any">
             <text macro="editor" suffix=". "/>
-            <text macro="container-title" font-weight="bold" suffix=". "/>
+            <text macro="container-title" suffix=". "/>
+            <text variable="page" prefix="p. "/ suffix=". "/>
             <text macro="publisher" suffix=", "/>
-            <text variable="page" prefix="p. "/>
           </if>
           <else-if type="article-journal article-magazine article-newspaper" match="any">
             <text macro="container-title" suffix=", "/>
