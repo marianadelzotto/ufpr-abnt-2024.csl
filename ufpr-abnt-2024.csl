@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="in-text" default-locale="pt-BR">
   <info>
-    <title>UFPR – ABNT (2024)</title>
+    <title>UFPR &#8211; ABNT (2024)</title>
     <title-short>UFPR ABNT</title-short>
     <id>http://www.zotero.org/styles/ufpr-abnt-2024</id>
     <link href="http://www.zotero.org/styles/ufpr-abnt-2024" rel="self"/>
@@ -14,7 +14,6 @@
     <updated>2025-10-27T00:00:00+00:00</updated>
     <rights>CC BY-SA 3.0</rights>
   </info>
-
   <locale xml:lang="pt-BR">
     <terms>
       <term name="accessed">Acesso em</term>
@@ -26,41 +25,34 @@
       <term name="and">; </term>
     </terms>
   </locale>
-
   <!-- Macros -->
   <macro name="author">
     <names variable="author" delimiter=", ">
       <name form="long" name-as-sort-order="all"/>
     </names>
   </macro>
-
   <macro name="editor">
     <names variable="editor" prefix=" In: " delimiter=", ">
       <name form="long" name-as-sort-order="all"/>
     </names>
   </macro>
-
   <macro name="issued">
     <date variable="issued">
       <date-part name="year"/>
     </date>
   </macro>
-
   <macro name="title">
     <text variable="title" font-weight="bold"/>
   </macro>
-
   <macro name="container-title">
     <text variable="container-title"/>
   </macro>
-
   <macro name="publisher">
     <group delimiter=": ">
       <text variable="publisher-place"/>
       <text variable="publisher"/>
     </group>
   </macro>
-
   <macro name="access">
     <group delimiter=". ">
       <text term="available at" text-case="capitalize-first" suffix=": "/>
@@ -75,7 +67,6 @@
       </group>
     </group>
   </macro>
-
   <!-- Citation style -->
   <citation collapse="year" et-al-min="4" et-al-use-first="3" disambiguate-add-year-suffix="true">
     <layout prefix="(" suffix=")" delimiter="; ">
@@ -85,7 +76,6 @@
       </group>
     </layout>
   </citation>
-
   <!-- Bibliography style -->
   <bibliography hanging-indent="false" et-al-min="4" et-al-use-first="3" line-spacing="1" entry-spacing="1" delimiter-precedes-last="always">
     <sort>
@@ -120,5 +110,4 @@
       </group>
     </layout>
   </bibliography>
-
 </style>
