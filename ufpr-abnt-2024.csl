@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="in-text" default-locale="pt-BR">
   <info>
     <title>UFPR ABNT (2024)</title>
@@ -25,49 +25,40 @@
       <term name="and">; </term>
     </terms>
   </locale>
-
   <!-- MACROS -->
   <macro name="author">
     <names variable="author" delimiter="; ">
-      <name form="long" name-as-sort-order="all" sort-separator=", "
-            initialize-with=". ">
+      <name form="long" name-as-sort-order="all" sort-separator=", " initialize-with=". ">
         <name-part name="family"/>
         <name-part name="given"/>
       </name>
     </names>
   </macro>
-
   <macro name="editor">
     <names variable="editor" prefix="In: " delimiter=", ">
-      <name form="long" name-as-sort-order="all" sort-separator=", "
-            initialize-with=". ">
+      <name form="long" name-as-sort-order="all" sort-separator=", " initialize-with=". ">
         <name-part name="family"/>
         <name-part name="given"/>
       </name>
     </names>
   </macro>
-
   <macro name="issued">
     <date variable="issued">
       <date-part name="year"/>
     </date>
   </macro>
-
   <macro name="title">
     <text variable="title" font-weight="bold" text-case="capitalize-first"/>
   </macro>
-
   <macro name="container-title">
     <text variable="container-title" font-weight="bold" text-case="capitalize-first"/>
   </macro>
-
   <macro name="publisher">
     <group delimiter=": ">
       <text variable="publisher-place"/>
       <text variable="publisher"/>
     </group>
   </macro>
-
   <macro name="access">
     <group delimiter=". ">
       <text term="available at" text-case="capitalize-first" suffix=": "/>
@@ -82,7 +73,6 @@
       </group>
     </group>
   </macro>
-
   <!-- CITATION (no texto) -->
   <citation collapse="year" et-al-min="4" et-al-use-first="1" disambiguate-add-year-suffix="true">
     <layout prefix="(" suffix=")" delimiter="; ">
@@ -93,7 +83,6 @@
       <text variable="locator" prefix=", p. "/>
     </layout>
   </citation>
-
   <!-- BIBLIOGRAPHY (referências) -->
   <bibliography hanging-indent="false" et-al-min="4" et-al-use-first="3" line-spacing="1" entry-spacing="1" delimiter-precedes-last="always">
     <sort>
