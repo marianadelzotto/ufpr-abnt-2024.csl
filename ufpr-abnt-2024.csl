@@ -29,18 +29,20 @@
   <!-- MACROS -->
   <macro name="author">
     <names variable="author" delimiter="; ">
-      <name form="long" name-as-sort-order="all" sort-separator=", ">
-        <name-part name="family" text-case="upper-case"/>
-        <name-part name="given" initialize-with=". " given-name-delimiter=". " text-case="capitalize-first"/>
+      <name form="long" name-as-sort-order="all" sort-separator=", "
+            initialize-with=". ">
+        <name-part name="family"/>
+        <name-part name="given"/>
       </name>
     </names>
   </macro>
 
   <macro name="editor">
     <names variable="editor" prefix="In: " delimiter=", ">
-      <name form="long" name-as-sort-order="all" sort-separator=", ">
-        <name-part name="family" text-case="upper-case"/>
-        <name-part name="given" initialize-with=". " given-name-delimiter=". " text-case="capitalize-first"/>
+      <name form="long" name-as-sort-order="all" sort-separator=", "
+            initialize-with=". ">
+        <name-part name="family"/>
+        <name-part name="given"/>
       </name>
     </names>
   </macro>
@@ -106,7 +108,7 @@
           <if type="chapter paper-conference" match="any">
             <text macro="editor" suffix=". "/>
             <text macro="container-title" suffix=". "/>
-            <text variable="page" prefix="p. "/ suffix=". "/>
+            <text variable="page" prefix="p. " suffix=". "/>
             <text macro="publisher" suffix=", "/>
           </if>
           <else-if type="article-journal article-magazine article-newspaper" match="any">
