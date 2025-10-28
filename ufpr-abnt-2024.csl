@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="in-text" default-locale="pt-BR">
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="in-text" demote-non-dropping-particle="never" default-locale="pt-BR">
   <info>
-    <title>UFPR ABNT (2024)</title>
-    <title-short>UFPR ABNT</title-short>
-    <id>http://www.zotero.org/styles/ufpr-abnt-2024</id>
-    <link href="http://www.zotero.org/styles/ufpr-abnt-2024" rel="self"/>
+    <title>ABNT Atualizado UFPR (2025)</title>
+    <title-short>ABNT UFPR</title-short>
+    <id>http://www.zotero.org/styles/abnt-atualizado-ufpr-2025</id>
+    <link href="http://www.zotero.org/styles/abnt-atualizado-ufpr-2025" rel="self"/>
     <link href="https://www.abnt.org.br/" rel="documentation"/>
     <author>
-      <name>Universidade Federal do Paraná (UFPR)</name>
+      <name>Juliana Geyna Régis et al.</name>
     </author>
     <category citation-format="author-date"/>
     <category field="generic-base"/>
@@ -23,6 +23,18 @@
       <term name="volume" form="short">v.</term>
       <term name="number" form="short">n.</term>
       <term name="and">; </term>
+      <term name="month-01" form="short">jan.</term>
+      <term name="month-02" form="short">fev.</term>
+      <term name="month-03" form="short">mar.</term>
+      <term name="month-04" form="short">abr.</term>
+      <term name="month-05" form="short">maio</term>
+      <term name="month-06" form="short">jun.</term>
+      <term name="month-07" form="short">jul.</term>
+      <term name="month-08" form="short">ago.</term>
+      <term name="month-09" form="short">set.</term>
+      <term name="month-10" form="short">out.</term>
+      <term name="month-11" form="short">nov.</term>
+      <term name="month-12" form="short">dez.</term>
     </terms>
   </locale>
   <!-- MACROS -->
@@ -39,6 +51,14 @@
       <name name-as-sort-order="all" sort-separator=", " initialize-with=". ">
         <name-part name="family" text-case="uppercase"/>
         <name-part name="given" text-case="capitalize-first"/>
+      </name>
+    </names>
+  </macro>
+  <macro name="translator">
+    <names variable="translator" delimiter="; ">
+      <name delimiter="; " sort-separator=" " delimiter-precedes-last="always" prefix="Tradução: ">
+        <name-part name="given" text-case="capitalize-first"/>
+        <name-part name="family" text-case="capitalize-first"/>
       </name>
     </names>
   </macro>
@@ -73,6 +93,12 @@
       </group>
     </group>
   </macro>
+  <macro name="citation-locator">
+    <group>
+      <label variable="locator" form="short"/>
+      <text variable="locator" prefix=" "/>
+    </group>
+  </macro>
   <!-- CITAÇÃO (no texto) -->
   <citation collapse="year" et-al-min="4" et-al-use-first="1" disambiguate-add-year-suffix="true">
     <layout prefix="(" suffix=")" delimiter="; ">
@@ -80,10 +106,10 @@
         <text macro="author"/>
         <text macro="issued"/>
       </group>
-      <text variable="locator" prefix=", p. "/>
+      <text macro="citation-locator"/>
     </layout>
   </citation>
-  <!-- REFERÊNCIAS -->
+  <!-- BIBLIOGRAFIA -->
   <bibliography hanging-indent="false" et-al-min="4" et-al-use-first="1" line-spacing="1" entry-spacing="1" delimiter-precedes-last="always">
     <sort>
       <key macro="author"/>
@@ -91,17 +117,20 @@
     </sort>
     <layout>
       <group delimiter=" ">
-        <!-- Autores -->
         <text macro="author" suffix=" "/>
-        <!-- Título -->
         <text macro="title" suffix=". "/>
+        <text macro="translator" suffix=". "/>
         <choose>
-          <!-- if obrigatório -->
           <if type="book" match="any">
             <text macro="publisher" suffix=", "/>
             <text macro="issued" suffix="."/>
           </if>
-          <!-- Artigos de periódicos -->
+          <else-if type="chapter" match="any">
+            <text macro="editor" suffix=". "/>
+            <text macro="container-title" suffix=". "/>
+            <text macro="publisher" suffix=", "/>
+            <text macro="issued" suffix="."/>
+          </else-if>
           <else-if type="article-journal article-magazine article-newspaper" match="any">
             <text macro="container-title" suffix=", "/>
             <text macro="issued" suffix=", "/>
@@ -111,13 +140,11 @@
               <text variable="page" prefix="p. "/>
             </group>
           </else-if>
-          <!-- Outros tipos -->
           <else>
             <text macro="publisher" suffix=", "/>
             <text macro="issued" suffix="."/>
           </else>
         </choose>
-        <!-- Acesso online -->
         <text macro="access" prefix=" "/>
       </group>
     </layout>
