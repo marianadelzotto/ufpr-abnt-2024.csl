@@ -84,7 +84,7 @@
     </layout>
   </citation>
   <!-- REFERÊNCIAS -->
-  <bibliography hanging-indent="false" et-al-min="4" et-al-use-first="3" line-spacing="1" entry-spacing="1" delimiter-precedes-last="always">
+  <bibliography hanging-indent="false" et-al-min="4" et-al-use-first="1" line-spacing="1" entry-spacing="1" delimiter-precedes-last="always">
     <sort>
       <key macro="author"/>
       <key macro="issued"/>
@@ -96,11 +96,8 @@
         <!-- Título -->
         <text macro="title" suffix=". "/>
         <choose>
-          <!-- Capítulo ou congresso -->
-          <if type="chapter paper-conference" match="any">
-            <text macro="editor" suffix=". "/>
-            <text macro="container-title" suffix=". "/>
-            <text variable="page" prefix="p. " suffix=". "/>
+          <!-- if obrigatório -->
+          <if type="book" match="any">
             <text macro="publisher" suffix=", "/>
             <text macro="issued" suffix="."/>
           </if>
