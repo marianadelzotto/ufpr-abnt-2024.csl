@@ -90,29 +90,37 @@
       <key macro="issued"/>
     </sort>
     <layout>
-      <group delimiter=". ">
-        <text macro="author" suffix=". "/>
+      <group delimiter=" ">
+        <!-- Autores -->
+        <text macro="author" suffix=" "/>
+        <!-- Título -->
         <text macro="title" suffix=". "/>
         <choose>
+          <!-- Capítulo ou congresso -->
           <if type="chapter paper-conference" match="any">
             <text macro="editor" suffix=". "/>
             <text macro="container-title" suffix=". "/>
             <text variable="page" prefix="p. " suffix=". "/>
             <text macro="publisher" suffix=", "/>
+            <text macro="issued" suffix="."/>
           </if>
+          <!-- Artigos de periódicos -->
           <else-if type="article-journal article-magazine article-newspaper" match="any">
             <text macro="container-title" suffix=", "/>
+            <text macro="issued" suffix=", "/>
             <group delimiter=", ">
               <text variable="volume" prefix="v. "/>
               <text variable="issue" prefix="n. "/>
               <text variable="page" prefix="p. "/>
             </group>
           </else-if>
+          <!-- Outros tipos -->
           <else>
             <text macro="publisher" suffix=", "/>
+            <text macro="issued" suffix="."/>
           </else>
         </choose>
-        <text macro="issued" suffix="."/>
+        <!-- Acesso online -->
         <text macro="access" prefix=" "/>
       </group>
     </layout>
